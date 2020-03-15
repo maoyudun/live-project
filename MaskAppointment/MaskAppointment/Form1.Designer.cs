@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TestEnd = new System.Windows.Forms.Button();
             this.TestStart = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TestNumberInput = new System.Windows.Forms.NumericUpDown();
+            this.TestNum = new System.Windows.Forms.Label();
             this.nameInput = new System.Windows.Forms.TextBox();
             this.realName = new System.Windows.Forms.Label();
             this.IDnumber = new System.Windows.Forms.Label();
@@ -41,11 +44,10 @@
             this.title = new System.Windows.Forms.Label();
             this.OrderNumber = new System.Windows.Forms.NumericUpDown();
             this.Submit = new System.Windows.Forms.Button();
-            this.TestNum = new System.Windows.Forms.Label();
-            this.TestNumberInput = new System.Windows.Forms.NumericUpDown();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestNumberInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // TestEnd
@@ -56,6 +58,7 @@
             this.TestEnd.TabIndex = 0;
             this.TestEnd.Text = "结束测试";
             this.TestEnd.UseVisualStyleBackColor = true;
+            this.TestEnd.Click += new System.EventHandler(this.TestEnd_Click);
             // 
             // TestStart
             // 
@@ -65,6 +68,7 @@
             this.TestStart.TabIndex = 1;
             this.TestStart.Text = "开始测试";
             this.TestStart.UseVisualStyleBackColor = true;
+            this.TestStart.Click += new System.EventHandler(this.TestStart_Click);
             // 
             // groupBox1
             // 
@@ -78,6 +82,32 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "测试部分";
+            // 
+            // TestNumberInput
+            // 
+            this.TestNumberInput.Location = new System.Drawing.Point(106, 65);
+            this.TestNumberInput.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.TestNumberInput.Name = "TestNumberInput";
+            this.TestNumberInput.Size = new System.Drawing.Size(88, 21);
+            this.TestNumberInput.TabIndex = 3;
+            this.TestNumberInput.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // TestNum
+            // 
+            this.TestNum.AutoSize = true;
+            this.TestNum.Location = new System.Drawing.Point(11, 67);
+            this.TestNum.Name = "TestNum";
+            this.TestNum.Size = new System.Drawing.Size(89, 12);
+            this.TestNum.TabIndex = 2;
+            this.TestNum.Text = "设置测试总量：";
             // 
             // nameInput
             // 
@@ -172,31 +202,9 @@
             this.Submit.Text = "预约提交";
             this.Submit.UseVisualStyleBackColor = true;
             // 
-            // TestNum
+            // timer1
             // 
-            this.TestNum.AutoSize = true;
-            this.TestNum.Location = new System.Drawing.Point(11, 67);
-            this.TestNum.Name = "TestNum";
-            this.TestNum.Size = new System.Drawing.Size(89, 12);
-            this.TestNum.TabIndex = 2;
-            this.TestNum.Text = "设置测试总量：";
-            // 
-            // TestNumberInput
-            // 
-            this.TestNumberInput.Location = new System.Drawing.Point(106, 65);
-            this.TestNumberInput.Maximum = new decimal(new int[] {
-            500,
-            0,
-            0,
-            0});
-            this.TestNumberInput.Name = "TestNumberInput";
-            this.TestNumberInput.Size = new System.Drawing.Size(88, 21);
-            this.TestNumberInput.TabIndex = 3;
-            this.TestNumberInput.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // Form1
             // 
@@ -219,8 +227,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OrderNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestNumberInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OrderNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,6 +251,7 @@
         private System.Windows.Forms.Button Submit;
         private System.Windows.Forms.NumericUpDown TestNumberInput;
         private System.Windows.Forms.Label TestNum;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

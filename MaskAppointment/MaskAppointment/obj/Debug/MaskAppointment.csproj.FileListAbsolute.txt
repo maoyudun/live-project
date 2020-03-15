@@ -1,0 +1,10 @@
+C:\Users\admin\Documents\GitHub\live-project\MaskAppointment\MaskAppointment\bin\Debug\MaskAppointment.exe.config
+C:\Users\admin\Documents\GitHub\live-project\MaskAppointment\MaskAppointment\bin\Debug\MaskAppointment.exe
+C:\Users\admin\Documents\GitHub\live-project\MaskAppointment\MaskAppointment\bin\Debug\MaskAppointment.pdb
+C:\Users\admin\Documents\GitHub\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.csprojAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.Properties.Resources.resources
+C:\Users\admin\Documents\GitHub\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.csproj.GenerateResource.cache
+C:\Users\admin\Documents\GitHub\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.exe
+C:\Users\admin\Documents\GitHub\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.pdb
+C:\Users\admin\Documents\GitHub\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.Form1.resources
