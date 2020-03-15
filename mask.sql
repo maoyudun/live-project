@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50716
 File Encoding         : 65001
 
-Date: 2020-03-15 10:14:38
+Date: 2020-03-15 11:17:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -42,7 +42,7 @@ CREATE TABLE `list` (
   `phone` char(11) NOT NULL,
   `maskNumber` int(1) NOT NULL,
   `registerID` char(9) NOT NULL,
-  PRIMARY KEY (`listNumber`)
+  PRIMARY KEY (`registerID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -60,7 +60,7 @@ CREATE TABLE `register` (
   `maskNumber` int(1) NOT NULL,
   `registerID` char(9) NOT NULL,
   `listNumber` int(1) NOT NULL,
-  PRIMARY KEY (`ID`,`phone`)
+  PRIMARY KEY (`registerID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
