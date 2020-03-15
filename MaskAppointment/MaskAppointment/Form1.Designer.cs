@@ -46,9 +46,12 @@
             this.Submit = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.AboveTitle = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.管理员登录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TestNumberInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderNumber)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TestEnd
@@ -232,6 +235,24 @@
             this.AboveTitle.TabIndex = 13;
             this.AboveTitle.Text = "当前不在预约时间内";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.管理员登录ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(399, 28);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 管理员登录ToolStripMenuItem
+            // 
+            this.管理员登录ToolStripMenuItem.Name = "管理员登录ToolStripMenuItem";
+            this.管理员登录ToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.管理员登录ToolStripMenuItem.Text = "管理员登录";
+            this.管理员登录ToolStripMenuItem.Click += new System.EventHandler(this.管理员登录ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -249,6 +270,7 @@
             this.Controls.Add(this.realName);
             this.Controls.Add(this.nameInput);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "口罩预约系统";
@@ -257,6 +279,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TestNumberInput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderNumber)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,6 +305,8 @@
         private System.Windows.Forms.Label TestNum;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label AboveTitle;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 管理员登录ToolStripMenuItem;
     }
 }
 

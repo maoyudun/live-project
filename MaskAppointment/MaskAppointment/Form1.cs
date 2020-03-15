@@ -196,5 +196,12 @@ namespace MaskAppointment
         private void 管理员登陆ToolStripMenuItem_Click(object sender, EventArgs e)
         {
         }
+
+        private void 管理员登录ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4Login form4Login = new Form4Login();
+            form4Login.Show();
+            this.Hide();
+        }
     }
 }
