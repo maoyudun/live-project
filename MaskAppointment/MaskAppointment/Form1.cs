@@ -22,7 +22,7 @@ namespace MaskAppointment
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Timer1_Tick(sender, e);
         }
         public static string GetNetDateTime()
         {
@@ -62,11 +62,13 @@ namespace MaskAppointment
         private void TestStart_Click(object sender, EventArgs e)
         {
             isTime = true;
+            AboveTitle.Text = "预约已开放";
         }
 
         private void TestEnd_Click(object sender, EventArgs e)
         {
             isTime = false;
+            AboveTitle.Text = "当前不在预约时间内";
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -76,17 +78,19 @@ namespace MaskAppointment
             timer1.Interval = 1000;//1000ms执行间隔
             string netTime = GetNetDateTime();//获取网络时间,需要转换
             DateTime netDateTime = Convert.ToDateTime(netTime);
-            DateTime startTime = new DateTime(2020, 3, 15, 13, 26, 50);//设置开始时间 
-            DateTime endTime = new DateTime(2020, 3, 15, 13, 29, 50);//设置结束时间
+            DateTime startTime = new DateTime(2020, 3, 15, 13, 20, 50);//设置开始时间 
+            DateTime endTime = new DateTime(2020, 3, 15, 14, 22,20);//设置结束时间
             int compNum1 = DateTime.Compare(startTime, netDateTime);
             int compNum2 = DateTime.Compare(endTime, netDateTime);
             if (compNum1 <= 0 && compNum2 >= 0)
             {
                 isTime = true;
+                AboveTitle.Text = "预约已开放";
             }
             else
             {
                 isTime = false;
+                AboveTitle.Text = "当前不在预约时间内";
             }
 
         }
