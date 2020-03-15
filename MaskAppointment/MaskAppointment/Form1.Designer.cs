@@ -45,6 +45,7 @@
             this.OrderNumber = new System.Windows.Forms.NumericUpDown();
             this.Submit = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.AboveTitle = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TestNumberInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderNumber)).BeginInit();
@@ -222,11 +223,22 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // AboveTitle
+            // 
+            this.AboveTitle.AutoSize = true;
+            this.AboveTitle.Location = new System.Drawing.Point(11, 10);
+            this.AboveTitle.Name = "AboveTitle";
+            this.AboveTitle.Size = new System.Drawing.Size(113, 12);
+            this.AboveTitle.TabIndex = 13;
+            this.AboveTitle.Text = "当前不在预约时间内";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 574);
+            this.ClientSize = new System.Drawing.Size(325, 459);
+            this.Controls.Add(this.AboveTitle);
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.OrderNumber);
             this.Controls.Add(this.title);
@@ -269,6 +281,7 @@
         private System.Windows.Forms.NumericUpDown TestNumberInput;
         private System.Windows.Forms.Label TestNum;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label AboveTitle;
     }
 }
 
