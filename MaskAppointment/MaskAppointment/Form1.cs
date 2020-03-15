@@ -7,15 +7,14 @@ using System.Net;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace MaskAppointment
 {
     public partial class Form1 : Form
     {
         public Boolean isTime;//是否在预约时间内
-        int listnumber = 0;
         public Form1()
         {
             isTime = false;
@@ -66,7 +65,6 @@ namespace MaskAppointment
         {
             isTime = true;
             AboveTitle.Text = "预约已开放";
-            listnumber++;
         }
 
         private void TestEnd_Click(object sender, EventArgs e)
@@ -98,45 +96,11 @@ namespace MaskAppointment
             }
 
         }
-            public void register()
-            {
-            //负责进行登记
-            string strSQLconn = "server=localhost;port=3306;database=mask;user=root;password=123456";
-            MySqlConnection conn;
-            conn = new MySqlConnection(strSQLconn);
-            conn.Open();
-
-            string name = nameInput.Text;
-            string ID = IdInput.Text;
-            string Phone = TelInput.Text;
-            int mask = OrderNumber.DecimalPlaces;
-            Random rd = new Random();
-            Int32 registerid = (Int16)(rd.NextDouble() * 1000000);
-            string registerID = Convert.ToString(registerid);
-            isAllowed test1 = new isAllowed();
-            if (test1.IfAppointmented(Phone, ID) == false)
-            {
-                MessageBox.Show("无法预约！");
-            }
-            else
-            {
-
-                MessageBox.Show("预约成功!");
-
-                string strSQL = "INSERT INTO info(name,ID,phone,maskNumber,registerID,listNumber) VALUES('" + name + "','" + ID + "','" + Phone + "','" + mask + "','" + registerID + "','" + listnumber + ")";
-                MySqlCommand registerCmd= new MySqlCommand(strSQL, conn);
-
-             }
-            }
-
-        private void Submit_Click(object sender, EventArgs e)
+        public static void SetRewardPerson(int listnumber)
         {
-            register();
-        }
-        public static void SetRewardPerson(int listnumber){
             int mask = 0;
             int listNumber = listnumber;
-            String date="";
+            String date = "";
             String deadline = "";
             String connectStr0 = "server=127.0.0.1;port=3306;user=root;password=123456;database=mask";
             MySqlConnection conn0 = new MySqlConnection(connectStr0);
@@ -144,7 +108,7 @@ namespace MaskAppointment
             {
                 conn0.Open();
                 Console.WriteLine("数据已打开1");
-                string sql = "select * from appointment where listNumber = "+listNumber;
+                string sql = "select * from appointment where listNumber = " + listNumber;
                 MySqlCommand cmd = new MySqlCommand(sql, conn0);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 reader.Read();
@@ -154,7 +118,7 @@ namespace MaskAppointment
                 dateTime.AddDays(3);
                 deadline = dateTime.ToShortDateString();
                 Console.WriteLine(deadline);
-             }
+            }
             catch (MySqlException ex)
             {
                 Console.WriteLine(ex.Message);
@@ -166,7 +130,7 @@ namespace MaskAppointment
 
             int people = 0;
             int maxpeople = 0;
-            int mask2=0;
+            int mask2 = 0;
             String connectStr = "server=127.0.0.1;port=3306;user=root;password=123456;database=mask";
             MySqlConnection conn = new MySqlConnection(connectStr);
             String[] name = new String[100];
@@ -178,10 +142,10 @@ namespace MaskAppointment
             {
                 conn.Open();
                 Console.WriteLine("数据已打开2");
-                string sql = "select * from Register where listNumber = "+listNumber;
-                MySqlCommand cmd = new MySqlCommand(sql,conn);
+                string sql = "select * from Register where listNumber = " + listNumber;
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
-               for(int i=0; reader.Read();++i)
+                for (int i = 0; reader.Read(); ++i)
                 {
                     name[i] = reader.GetString("name");
                     ID[i] = reader.GetString("ID");
@@ -190,14 +154,14 @@ namespace MaskAppointment
                     registerID[i] = reader.GetString("registerID");
                     people++;
                 }
-               for(int i=0;i<people;++i)
+                for (int i = 0; i < people; ++i)
                 {
                     mask2 += maskNumber[i];
                     if (mask >= mask2) maxpeople++;
                     else break;
                 }
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -213,11 +177,11 @@ namespace MaskAppointment
                 conn2.Open();
                 Console.WriteLine("数据已打开3");
                 string sql = "";
-                for (int i = 0; i<maxpeople; ++i)
+                for (int i = 0; i < maxpeople; ++i)
                 {
                     sql += "insert into list(listNumber,name,ID,phone,maskNumber,registerID,Date,deadline) values(" + listNumber + ",'" + name[i] + "','" + ID[i] + "','" + phone[i] + "'," + maskNumber[i] + ",'" + registerID[i] + "','" + date + "','" + deadline + "');";
                 }
-                MySqlCommand cmd = new MySqlCommand(sql,conn2);
+                MySqlCommand cmd = new MySqlCommand(sql, conn2);
                 cmd.ExecuteNonQuery();
             }
             catch (MySqlException ex)
@@ -228,6 +192,9 @@ namespace MaskAppointment
             {
                 conn2.Close();
             }
-       }
+        }
+        private void 管理员登陆ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

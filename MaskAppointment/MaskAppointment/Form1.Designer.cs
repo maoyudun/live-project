@@ -218,7 +218,6 @@
             this.Submit.TabIndex = 12;
             this.Submit.Text = "预约提交";
             this.Submit.UseVisualStyleBackColor = true;
-            this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
             // timer1
             // 
@@ -227,7 +226,7 @@
             // AboveTitle
             // 
             this.AboveTitle.AutoSize = true;
-            this.AboveTitle.Location = new System.Drawing.Point(11, 10);
+            this.AboveTitle.Location = new System.Drawing.Point(142, 293);
             this.AboveTitle.Name = "AboveTitle";
             this.AboveTitle.Size = new System.Drawing.Size(142, 15);
             this.AboveTitle.TabIndex = 13;
@@ -252,7 +251,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "a";
+            this.Text = "口罩预约系统";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

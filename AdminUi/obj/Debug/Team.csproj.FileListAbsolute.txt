@@ -1,0 +1,4 @@
+C:\Users\59836\Desktop\live-project\AdminUi\obj\Debug\Team.csprojAssemblyReference.cache
+C:\Users\59836\Desktop\live-project\AdminUi\obj\Debug\Team.Form2.resources
+C:\Users\59836\Desktop\live-project\AdminUi\obj\Debug\Team.Properties.Resources.resources
+C:\Users\59836\Desktop\live-project\AdminUi\obj\Debug\Team.csproj.GenerateResource.cache

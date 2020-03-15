@@ -56,7 +56,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="isAllowed.cs" />
+    <Compile Include="Form4Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4Admin.Designer.cs">
+      <DependentUpon>Form4Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4Login.Designer.cs">
+      <DependentUpon>Form4Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="QueryMask.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +78,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4Admin.resx">
+      <DependentUpon>Form4Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4Login.resx">
+      <DependentUpon>Form4Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QueryMask.resx">
       <DependentUpon>QueryMask.cs</DependentUpon>

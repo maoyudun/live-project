@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 namespace MaskAppointment
 {
-
-    public class isAllowed
+    class test
     {
         /*
          * TODO:判断是否能预约
          * PhoneNumber:电话号码 
          * IdNumber:身份证号
          */
-        public Boolean IfAppointmented(string PhoneNumber, string IdNumber)
+        public Boolean ifAppointmented(int PhoneNumber, int IdNumber)
         {
             Boolean isPermmited = true;//是否允许预约
             /*
@@ -50,7 +49,7 @@ namespace MaskAppointment
                     if (reader.GetInt32("listNumber") == CurrentTime)
                     {
                         //身份证号或电话号码匹配
-                        if (reader.GetString("ID") == IdNumber || reader.GetString("phone") == PhoneNumber)
+                        if (reader.GetInt32("ID") == IdNumber || reader.GetInt32("phone") == PhoneNumber)
                         {
                             isPermmited = false;//这次的预约记录存在该用户的信息，这次已经预约过，不允许再预约
                             return isPermmited;
@@ -60,20 +59,20 @@ namespace MaskAppointment
                 }
                 //遍历所有中签条目,判断是否三天之内(鲨)中(了)过(你)签
                 String list = "select ID,listNumber,phone from register";
-                MySqlCommand ListCmd = new MySqlCommand(list, conn);
+                MySqlCommand ListCmd = new MySqlCommand(register, conn);
                 reader = ListCmd.ExecuteReader();
                 while (reader.Read())
                 {
                     if ((CurrentTime - reader.GetInt32("listNumber")) < 3)
                     {
-                        if (reader.GetString("ID") == IdNumber || reader.GetString("phone") == PhoneNumber)
+                        if (reader.GetInt32("ID") == IdNumber || reader.GetInt32("phone") == PhoneNumber)
                         {
                             isPermmited = false;
                             return isPermmited;
                         }
                     }
                     else break;
-                }
+                }           
 
             }
             catch (MySqlException ex)
