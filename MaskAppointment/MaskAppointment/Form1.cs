@@ -12,10 +12,12 @@ using System.Windows.Forms;
 
 namespace MaskAppointment
 {
+
     public partial class Form1 : Form
     {
         public Boolean isTime;//是否在预约时间内
         public int listnumber = 0;//用来记录是第几次预约
+        string registerID;
         public Form1()
         {
             isTime = false;
@@ -72,6 +74,8 @@ namespace MaskAppointment
         private void TestEnd_Click(object sender, EventArgs e)
         {
             isTime = false;
+            int c = int.Parse(registerID);
+            SetRewardPerson(c);
             AboveTitle.Text = "当前不在预约时间内";
         }
 
@@ -228,6 +232,7 @@ namespace MaskAppointment
                     registerid = -registerid;
                 }
                 string registerID = Convert.ToString(registerid);
+                this.registerID = registerID;
                 isAllowed test1 = new isAllowed();
                 if (test1.IfAppointmented(Phone, ID) == false || isTime == false)
                 {

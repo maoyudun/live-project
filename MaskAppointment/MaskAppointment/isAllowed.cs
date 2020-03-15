@@ -24,7 +24,7 @@ namespace MaskAppointment
                 conn.Open();
                 int CurrentTime = 0;//当前开放的预约是第几次
                 //看看这是第几次预约
-                String appointment = "select listNumber from Appiontment";
+                String appointment = "select listNumber from Appointment";
                 MySqlCommand AppointmentCmd = new MySqlCommand(appointment, conn);
                 reader = AppointmentCmd.ExecuteReader();
                 while (reader.Read())
@@ -53,6 +53,8 @@ namespace MaskAppointment
                     }
                     else break;//这次预约的记录遍历完就退出
                 }
+                reader.Close();
+
                 //遍历所有中签条目,判断是否三天之内(鲨)中(了)过(你)签
                 String list = "select ID,listNumber,phone from list";
                 MySqlCommand ListCmd = new MySqlCommand(register, conn);
@@ -69,6 +71,8 @@ namespace MaskAppointment
                     }
                     else break;
                 }
+                reader.Close();
+
 
             }
             catch (MySqlException ex)
