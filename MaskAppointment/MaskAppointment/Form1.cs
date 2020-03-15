@@ -15,6 +15,7 @@ namespace MaskAppointment
     public partial class Form1 : Form
     {
         public Boolean isTime;//是否在预约时间内
+        public int listnumber = 0;//用来记录是第几次预约
         public Form1()
         {
             isTime = false;
@@ -65,6 +66,7 @@ namespace MaskAppointment
         {
             isTime = true;
             AboveTitle.Text = "预约已开放";
+            listnumber++;
         }
 
         private void TestEnd_Click(object sender, EventArgs e)
@@ -81,7 +83,7 @@ namespace MaskAppointment
             string netTime = GetNetDateTime();//获取网络时间,需要转换
             DateTime netDateTime = Convert.ToDateTime(netTime);
             DateTime startTime = new DateTime(2020, 3, 15, 13, 20, 50);//设置开始时间 
-            DateTime endTime = new DateTime(2020, 3, 15, 14, 22,20);//设置结束时间
+            DateTime endTime = new DateTime(2020, 3, 15, 14, 22, 20);//设置结束时间
             int compNum1 = DateTime.Compare(startTime, netDateTime);
             int compNum2 = DateTime.Compare(endTime, netDateTime);
             if (compNum1 <= 0 && compNum2 >= 0)
@@ -193,15 +195,68 @@ namespace MaskAppointment
                 conn2.Close();
             }
         }
-        private void 管理员登陆ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
 
         private void 管理员登录ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form4Login form4Login = new Form4Login();
             form4Login.Show();
             this.Hide();
+        }
+
+        private void Submit_Click(object sender, EventArgs e)
+        {
+            register();
+        }
+        public void register()
+        {
+            //负责进行登记
+            string strSQLconn = "server=localhost;port=3306;database=mask;user=root;password=123456";
+            MySqlConnection conn;
+            conn = new MySqlConnection(strSQLconn);
+            try
+            {
+                conn.Open();
+
+                string name = nameInput.Text;
+                string ID = IdInput.Text;
+                string Phone = TelInput.Text;
+                int mask = OrderNumber.DecimalPlaces;
+                Random rd = new Random();
+                Int32 registerid = (Int16)(rd.NextDouble() * 1000000);
+                if(registerid < 0)
+                {
+                    registerid = -registerid;
+                }
+                string registerID = Convert.ToString(registerid);
+                isAllowed test1 = new isAllowed();
+                if (test1.IfAppointmented(Phone, ID) == false || isTime == false)
+                {
+                    MessageBox.Show("无法预约！");
+                }
+                else
+                {
+
+                    string strSQL = "INSERT INTO register(name,ID,phone,maskNumber,registerID,listNumber) VALUES('" + name + "','" + ID + "','" + Phone + "','" + mask + "','" + registerID + "','" + listnumber + "')";
+                    MySqlCommand registerCmd = new MySqlCommand(strSQL, conn);
+                    registerCmd.ExecuteNonQuery();
+                    MessageBox.Show("预约成功!预约编号为:"+ registerID );
+
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void button4Query_Click(object sender, EventArgs e)
+        {
+            QueryMask queryMask = new QueryMask();
+            queryMask.Show();
         }
     }
 }

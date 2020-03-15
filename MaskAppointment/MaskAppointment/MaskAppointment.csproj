@@ -68,6 +68,7 @@
     <Compile Include="Form4Login.Designer.cs">
       <DependentUpon>Form4Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="isAllowed.cs" />
     <Compile Include="QueryMask.cs">
       <SubType>Form</SubType>
     </Compile>

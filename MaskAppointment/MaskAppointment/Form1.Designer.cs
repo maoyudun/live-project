@@ -48,6 +48,7 @@
             this.AboveTitle = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.管理员登录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button4Query = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TestNumberInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrderNumber)).BeginInit();
@@ -214,13 +215,14 @@
             // 
             // Submit
             // 
-            this.Submit.Location = new System.Drawing.Point(157, 322);
+            this.Submit.Location = new System.Drawing.Point(253, 322);
             this.Submit.Margin = new System.Windows.Forms.Padding(4);
             this.Submit.Name = "Submit";
             this.Submit.Size = new System.Drawing.Size(100, 29);
             this.Submit.TabIndex = 12;
             this.Submit.Text = "预约提交";
             this.Submit.UseVisualStyleBackColor = true;
+            this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
             // timer1
             // 
@@ -253,11 +255,23 @@
             this.管理员登录ToolStripMenuItem.Text = "管理员登录";
             this.管理员登录ToolStripMenuItem.Click += new System.EventHandler(this.管理员登录ToolStripMenuItem_Click);
             // 
+            // button4Query
+            // 
+            this.button4Query.Location = new System.Drawing.Point(123, 322);
+            this.button4Query.Margin = new System.Windows.Forms.Padding(4);
+            this.button4Query.Name = "button4Query";
+            this.button4Query.Size = new System.Drawing.Size(100, 29);
+            this.button4Query.TabIndex = 15;
+            this.button4Query.Text = "中签查询";
+            this.button4Query.UseVisualStyleBackColor = true;
+            this.button4Query.Click += new System.EventHandler(this.button4Query_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 471);
+            this.Controls.Add(this.button4Query);
             this.Controls.Add(this.AboveTitle);
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.OrderNumber);
@@ -307,6 +321,7 @@
         private System.Windows.Forms.Label AboveTitle;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 管理员登录ToolStripMenuItem;
+        private System.Windows.Forms.Button button4Query;
     }
 }
 
