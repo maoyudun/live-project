@@ -17,6 +17,7 @@ namespace MaskAppointment
         public Form1()
         {
             isTime = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 
