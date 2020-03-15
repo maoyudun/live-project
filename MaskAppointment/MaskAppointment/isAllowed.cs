@@ -57,7 +57,22 @@ namespace MaskAppointment
                     }
                     else break;//这次预约的记录遍历完就退出
                 }
-
+                //遍历所有中签条目,判断是否三天之内(鲨)中(了)过(你)签
+                String list = "select ID,listNumber,phone from register";
+                MySqlCommand ListCmd = new MySqlCommand(register, conn);
+                reader = ListCmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if ((CurrentTime - reader.GetInt32("listNumber")) < 3)
+                    {
+                        if (reader.GetInt32("ID") == IdNumber || reader.GetInt32("phone") == PhoneNumber)
+                        {
+                            isPermmited = false;
+                            return isPermmited;
+                        }
+                    }
+                    else break;
+                }           
 
             }
             catch (MySqlException ex)
