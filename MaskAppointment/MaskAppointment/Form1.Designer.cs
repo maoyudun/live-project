@@ -54,7 +54,7 @@
             // TestEnd
             // 
             this.TestEnd.Location = new System.Drawing.Point(141, 25);
-            this.TestEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TestEnd.Margin = new System.Windows.Forms.Padding(4);
             this.TestEnd.Name = "TestEnd";
             this.TestEnd.Size = new System.Drawing.Size(100, 29);
             this.TestEnd.TabIndex = 0;
@@ -65,7 +65,7 @@
             // TestStart
             // 
             this.TestStart.Location = new System.Drawing.Point(17, 25);
-            this.TestStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TestStart.Margin = new System.Windows.Forms.Padding(4);
             this.TestStart.Name = "TestStart";
             this.TestStart.Size = new System.Drawing.Size(100, 29);
             this.TestStart.TabIndex = 1;
@@ -80,9 +80,9 @@
             this.groupBox1.Controls.Add(this.TestStart);
             this.groupBox1.Controls.Add(this.TestEnd);
             this.groupBox1.Location = new System.Drawing.Point(65, 405);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(267, 125);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -91,7 +91,7 @@
             // TestNumberInput
             // 
             this.TestNumberInput.Location = new System.Drawing.Point(141, 81);
-            this.TestNumberInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TestNumberInput.Margin = new System.Windows.Forms.Padding(4);
             this.TestNumberInput.Maximum = new decimal(new int[] {
             500,
             0,
@@ -119,7 +119,7 @@
             // nameInput
             // 
             this.nameInput.Location = new System.Drawing.Point(172, 112);
-            this.nameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameInput.Margin = new System.Windows.Forms.Padding(4);
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(159, 25);
             this.nameInput.TabIndex = 3;
@@ -147,7 +147,7 @@
             // IdInput
             // 
             this.IdInput.Location = new System.Drawing.Point(172, 156);
-            this.IdInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.IdInput.Margin = new System.Windows.Forms.Padding(4);
             this.IdInput.Name = "IdInput";
             this.IdInput.Size = new System.Drawing.Size(159, 25);
             this.IdInput.TabIndex = 6;
@@ -165,7 +165,7 @@
             // TelInput
             // 
             this.TelInput.Location = new System.Drawing.Point(172, 202);
-            this.TelInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TelInput.Margin = new System.Windows.Forms.Padding(4);
             this.TelInput.Name = "TelInput";
             this.TelInput.Size = new System.Drawing.Size(159, 25);
             this.TelInput.TabIndex = 8;
@@ -194,7 +194,7 @@
             // OrderNumber
             // 
             this.OrderNumber.Location = new System.Drawing.Point(172, 254);
-            this.OrderNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OrderNumber.Margin = new System.Windows.Forms.Padding(4);
             this.OrderNumber.Maximum = new decimal(new int[] {
             5,
             0,
@@ -212,7 +212,7 @@
             // Submit
             // 
             this.Submit.Location = new System.Drawing.Point(157, 322);
-            this.Submit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Submit.Margin = new System.Windows.Forms.Padding(4);
             this.Submit.Name = "Submit";
             this.Submit.Size = new System.Drawing.Size(100, 29);
             this.Submit.TabIndex = 12;
@@ -228,7 +228,7 @@
             this.AboveTitle.AutoSize = true;
             this.AboveTitle.Location = new System.Drawing.Point(11, 10);
             this.AboveTitle.Name = "AboveTitle";
-            this.AboveTitle.Size = new System.Drawing.Size(113, 12);
+            this.AboveTitle.Size = new System.Drawing.Size(142, 15);
             this.AboveTitle.TabIndex = 13;
             this.AboveTitle.Text = "当前不在预约时间内";
             // 
@@ -236,8 +236,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 574);
-            this.ClientSize = new System.Drawing.Size(325, 459);
+            this.ClientSize = new System.Drawing.Size(399, 471);
             this.Controls.Add(this.AboveTitle);
             this.Controls.Add(this.Submit);
             this.Controls.Add(this.OrderNumber);
@@ -250,7 +249,7 @@
             this.Controls.Add(this.realName);
             this.Controls.Add(this.nameInput);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "a";
             this.Load += new System.EventHandler(this.Form1_Load);

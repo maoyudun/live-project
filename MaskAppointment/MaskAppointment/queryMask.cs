@@ -28,22 +28,26 @@ namespace MaskAppointment
 
             string sql = "select * from list where registerID='" + this.numInput.Text + "'";
             MySqlCommand command = new MySqlCommand(sql, conn);
-            MySqlDataReader reader = command.ExecuteReader();
-            int i = 0;
-            while (reader.Read())
-            {
-                i++;
-            }
+            int i = Convert.ToInt32(command.ExecuteScalar());
             command.Dispose();
-            if (i != 0)
+            conn.Close();
+            if (i > 0)
             {
-                MessageBox.Show("已中签！");
+                MySqlConnection conn1;
+                conn1 = new MySqlConnection(strSQLconn);
+                conn1.Open();
+                MySqlCommand command1 = new MySqlCommand(sql, conn1);
+                MySqlDataReader reader = command1.ExecuteReader();
+                reader.Read();
+                MessageBox.Show("已中签！\r\n"+"姓名:"+reader[1]+"\r\n身份证号:"+reader[2]+"\r\n电话号:"+ reader[3]+ "\r\n购买次数:"+reader[4]);
+                command1.Dispose();
+                conn1.Close();
             }
             else
             {
                 MessageBox.Show("未中签！");
             }
-            conn.Close();
+            
         }
     }
 }

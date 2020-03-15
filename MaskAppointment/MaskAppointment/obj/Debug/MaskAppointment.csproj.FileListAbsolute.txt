@@ -13,10 +13,10 @@ D:\github store\live-project\MaskAppointment\MaskAppointment\bin\Debug\MaskAppoi
 D:\github store\live-project\MaskAppointment\MaskAppointment\bin\Debug\MaskAppointment.pdb
 D:\github store\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.csprojAssemblyReference.cache
 D:\github store\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.Form1.resources
-D:\github store\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.Form2.resources
 D:\github store\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.Properties.Resources.resources
 D:\github store\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.csproj.GenerateResource.cache
 D:\github store\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.csproj.CoreCompileInputs.cache
 D:\github store\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.exe
 D:\github store\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.pdb
 D:\github store\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.csproj.CopyComplete
+D:\github store\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.QueryMask.resources
