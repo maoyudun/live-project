@@ -39,7 +39,8 @@ namespace MaskAppointment
                 MySqlCommand command1 = new MySqlCommand(sql, conn1);
                 MySqlDataReader reader = command1.ExecuteReader();
                 reader.Read();
-                MessageBox.Show("已中签！\r\n"+"姓名:"+reader[1]+"\r\n身份证号:"+reader[2]+"\r\n电话号:"+ reader[3]+ "\r\n购买次数:"+reader[4]);
+                MessageBox.Show("已中签！\r\n"+"姓名:"+reader[1]+"\r\n身份证号:"+reader[2]+"\r\n电话号:"+ reader[3]+ "\r\n购买次数:"+reader[4]
+                    +"\r\n预约编号:" + reader[5] + "\r\n起始日期:" + reader[6] + "\r\n有效日期至:" + reader[7]);
                 command1.Dispose();
                 conn1.Close();
             }
