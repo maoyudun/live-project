@@ -218,6 +218,7 @@
             this.Submit.TabIndex = 12;
             this.Submit.Text = "预约提交";
             this.Submit.UseVisualStyleBackColor = true;
+            this.Submit.Click += new System.EventHandler(this.Submit_Click);
             // 
             // timer1
             // 

@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace MaskAppointment
 {
     public partial class Form1 : Form
     {
         public Boolean isTime;//是否在预约时间内
+        int listnumber = 0;
         public Form1()
         {
             isTime = false;
@@ -64,6 +66,7 @@ namespace MaskAppointment
         {
             isTime = true;
             AboveTitle.Text = "预约已开放";
+            listnumber++;
         }
 
         private void TestEnd_Click(object sender, EventArgs e)
@@ -94,6 +97,41 @@ namespace MaskAppointment
                 AboveTitle.Text = "当前不在预约时间内";
             }
 
+        }
+            public void register()
+            {
+            //负责进行登记
+            string strSQLconn = "server=localhost;port=3306;database=mask;user=root;password=123456";
+            MySqlConnection conn;
+            conn = new MySqlConnection(strSQLconn);
+            conn.Open();
+
+            string name = nameInput.Text;
+            string ID = IdInput.Text;
+            string Phone = TelInput.Text;
+            int mask = OrderNumber.DecimalPlaces;
+            Random rd = new Random();
+            Int32 registerid = (Int16)(rd.NextDouble() * 1000000);
+            string registerID = Convert.ToString(registerid);
+            isAllowed test1 = new isAllowed();
+            if (test1.IfAppointmented(Phone, ID) == false)
+            {
+                MessageBox.Show("无法预约！");
+            }
+            else
+            {
+
+                MessageBox.Show("预约成功!");
+
+                string strSQL = "INSERT INTO info(name,ID,phone,maskNumber,registerID,listNumber) VALUES('" + name + "','" + ID + "','" + Phone + "','" + mask + "','" + registerID + "','" + listnumber + ")";
+                MySqlCommand registerCmd= new MySqlCommand(strSQL, conn);
+
+             }
+            }
+
+        private void Submit_Click(object sender, EventArgs e)
+        {
+            register();
         }
     }
 }
