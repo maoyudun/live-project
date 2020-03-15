@@ -10,16 +10,16 @@ Target Server Type    : MYSQL
 Target Server Version : 50716
 File Encoding         : 65001
 
-Date: 2020-03-15 11:17:28
+Date: 2020-03-15 11:12:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `appointment`
+-- Table structure for `appiontment`
 -- ----------------------------
-DROP TABLE IF EXISTS `appointment`;
-CREATE TABLE `appointment` (
+DROP TABLE IF EXISTS `appiontment`;
+CREATE TABLE `appiontment` (
   `listNumber` int(1) NOT NULL,
   `mask` int(3) NOT NULL,
   `opentime` varchar(10) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE `appointment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of appointment
+-- Records of appiontment
 -- ----------------------------
 
 -- ----------------------------
