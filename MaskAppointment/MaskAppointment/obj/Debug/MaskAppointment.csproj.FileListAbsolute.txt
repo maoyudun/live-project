@@ -33,16 +33,3 @@ C:\Users\59836\Desktop\live-project\MaskAppointment\MaskAppointment\obj\Debug\Ma
 C:\Users\59836\Desktop\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.csprojAssemblyReference.cache
 C:\Users\59836\Desktop\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.Form4Admin.resources
 C:\Users\59836\Desktop\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.Form4Login.resources
-D:\live-project\MaskAppointment\MaskAppointment\bin\Debug\MaskAppointment.exe.config
-D:\live-project\MaskAppointment\MaskAppointment\bin\Debug\MaskAppointment.exe
-D:\live-project\MaskAppointment\MaskAppointment\bin\Debug\MaskAppointment.pdb
-D:\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.csprojAssemblyReference.cache
-D:\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.Form1.resources
-D:\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.Form4Admin.resources
-D:\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.Form4Login.resources
-D:\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.QueryMask.resources
-D:\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.Properties.Resources.resources
-D:\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.csproj.GenerateResource.cache
-D:\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.csproj.CopyComplete
-D:\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.exe
-D:\live-project\MaskAppointment\MaskAppointment\obj\Debug\MaskAppointment.pdb

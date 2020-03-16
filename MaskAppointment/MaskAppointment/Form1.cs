@@ -17,7 +17,6 @@ namespace MaskAppointment
     {
         public Boolean isTime;//是否在预约时间内
         public int listnumber = 0;//用来记录是第几次预约
-        string registerID;
         public Form1()
         {
             isTime = false;
@@ -66,17 +65,22 @@ namespace MaskAppointment
 
         private void TestStart_Click(object sender, EventArgs e)
         {
-            isTime = true;
-            AboveTitle.Text = "预约已开放";
-            listnumber++;
+            if(isTime == false)
+            {
+                isTime = true;
+                AboveTitle.Text = "预约已开放";
+                listnumber++;
+            }
         }
 
         private void TestEnd_Click(object sender, EventArgs e)
         {
-            isTime = false;
-            int c = int.Parse(registerID);
-            SetRewardPerson(c);
-            AboveTitle.Text = "当前不在预约时间内";
+            if(isTime == true)
+            {
+                isTime = false;
+                SetRewardPerson(listnumber);
+                AboveTitle.Text = "当前不在预约时间内";
+            }
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -233,11 +237,10 @@ namespace MaskAppointment
                     registerid = -registerid;
                 }
                 string registerID = Convert.ToString(registerid);
-                this.registerID = registerID;
                 isAllowed test1 = new isAllowed();
                 if (test1.IfAppointmented(Phone, ID) == false || isTime == false)
                 {
-                    MessageBox.Show("无法预约！");
+                    MessageBox.Show("无法预约！","提示");
                 }
                 else
                 {
@@ -245,7 +248,7 @@ namespace MaskAppointment
                     string strSQL = "INSERT INTO register(name,ID,phone,maskNumber,registerID,listNumber) VALUES('" + name + "','" + ID + "','" + Phone + "','" + mask + "','" + registerID + "','" + listnumber + "')";
                     MySqlCommand registerCmd = new MySqlCommand(strSQL, conn);
                     registerCmd.ExecuteNonQuery();
-                    MessageBox.Show("预约成功!预约编号为:"+ registerID );
+                    MessageBox.Show("预约成功!预约编号为:"+ registerID ,"提示");
 
                 }
             }
