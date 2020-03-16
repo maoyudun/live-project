@@ -224,7 +224,8 @@ namespace MaskAppointment
                 string name = nameInput.Text;
                 string ID = IdInput.Text;
                 string Phone = TelInput.Text;
-                int mask = OrderNumber.DecimalPlaces;
+                String Mask = OrderNumber.Value.ToString();
+                int mask = Convert.ToInt32(Mask);
                 Random rd = new Random();
                 Int32 registerid = (Int16)(rd.NextDouble() * 1000000);
                 if(registerid < 0)
